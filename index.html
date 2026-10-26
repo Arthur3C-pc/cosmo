@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmoQuiz - Até Onde Você Sabe?</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Canvas animado de fundo espacial com partículas de poeira cósmica -->
+    <canvas id="space-canvas"></canvas>
+
+    <div class="app-container">
+        <!-- Cabeçalho do App -->
+        <header class="app-header">
+            <h1 class="neon-title">COSMO<span class="highlight">QUIZ</span></h1>
+            <p class="subtitle">Jornada até o Limite do Universo Conhecido</p>
+        </header>
+
+        <!-- Fluxograma Visual Cósmico Interativo -->
+        <section class="flowchart-section">
+            <h2 class="section-title">Navegação Constelar (Fluxograma)</h2>
+            <div class="flowchart-container" id="flowchart-wrapper">
+                <svg id="cosmic-flowchart" xmlns="http://www.w3.org/2000/svg"></svg>
+            </div>
+        </section>
+
+        <!-- Container do Quiz -->
+        <main class="quiz-container">
+            <!-- Tela Inicial -->
+            <div id="start-screen" class="screen active">
+                <div class="cosmic-card">
+                    <h2>Bem-vindo à Odisséia Cósmica</h2>
+                    <p>Você será testado em <strong>22 níveis de conhecimento espacial</strong>. A cada resposta dada, um novo nó do mapa estelar será traçado.</p>
+                    <button id="start-btn" class="cosmic-btn glow-btn">Iniciar Expedição</button>
+                </div>
+            </div>
+
+            <!-- Tela das Perguntas -->
+            <div id="quiz-screen" class="screen hide">
+                <div class="status-bar">
+                    <span id="level-indicator">Nível 1 de 22</span>
+                    <span id="score-indicator">Pontos: 0</span>
+                </div>
+
+                <div class="question-card">
+                    <h3 id="question-text">Carregando pergunta...</h3>
+                    <div id="answers-container" class="answers-grid"></div>
+                </div>
+
+                <div class="controls">
+                    <button id="next-btn" class="cosmic-btn hide">Avançar no Espaço &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Tela de Resultado Final -->
+            <div id="result-screen" class="screen hide">
+                <div class="cosmic-card final-card">
+                    <h2 class="neon-glow-text">Relatório do Explorador</h2>
+                    <p id="final-message">Calculando seu alcance no universo...</p>
+                    <div id="result-stats" class="stats-box"></div>
+                    <button id="restart-btn" class="cosmic-btn glow-btn">Reiniciar Missão</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

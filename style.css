@@ -1,0 +1,266 @@
+/* RESET E ESTILOS BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+body {
+    background-color: #03030c;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* CANVAS DE FUNDO ESPACIAL */
+#space-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: radial-gradient(circle at center, #0a0a24 0%, #020208 100%);
+}
+
+/* APP CONTAINER (ESTILO MOVEL/APP) */
+.app-container {
+    width: 100%;
+    max-width: 850px;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* CABEÇALHO COM TÍTULO NEON CÓSMICO */
+.app-header {
+    text-align: center;
+}
+
+.neon-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #00f3ff,
+        0 0 82px #00f3ff;
+}
+
+.neon-title .highlight {
+    color: #ff00ff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 42px #ff00ff,
+        0 0 82px #ff00ff;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #a0a5c3;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+/* FLUXOGRAMA CÓSMICO (VISUAL E COLORIDO) */
+.flowchart-section {
+    background: rgba(10, 15, 35, 0.75);
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    border-radius: 16px;
+    padding: 15px;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: #00f3ff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.flowchart-container {
+    width: 100%;
+    height: 120px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #00f3ff #050b1e;
+}
+
+#cosmic-flowchart {
+    height: 100%;
+    min-width: 1200px;
+}
+
+/* QUIZ CONTAINER */
+.cosmic-card {
+    background: rgba(13, 17, 43, 0.85);
+    border: 2px solid #1a2356;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(111, 0, 255, 0.2), inset 0 0 15px rgba(0, 243, 255, 0.1);
+    backdrop-filter: blur(12px);
+}
+
+.cosmic-card h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.cosmic-card p {
+    font-size: 1.2rem;
+    color: #c0c6e0;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* BOTÕES CÓSMICOS */
+.cosmic-btn {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 14px 32px;
+    color: #fff;
+    background: linear-gradient(135deg, #7928ca, #ff0080);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.glow-btn {
+    box-shadow: 0 0 15px rgba(255, 0, 128, 0.6), 0 0 30px rgba(121, 40, 202, 0.4);
+}
+
+.cosmic-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 0 25px rgba(255, 0, 128, 0.9), 0 0 50px rgba(0, 243, 255, 0.8);
+}
+
+/* PAINEL DE PERGUNTAS */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    color: #00f3ff;
+    margin-bottom: 15px;
+    padding: 0 10px;
+}
+
+.question-card {
+    background: rgba(13, 17, 43, 0.85);
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+}
+
+#question-text {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* GRID DE RESPOSTAS */
+.answers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+@media (max-width: 600px) {
+    .answers-grid {
+        grid-template-columns: 1fr;
+    }
+    .neon-title {
+        font-size: 2.1rem;
+    }
+}
+
+.answer-btn {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 16px;
+    background: rgba(23, 31, 70, 0.8);
+    color: #e0e6ff;
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-align: left;
+}
+
+.answer-btn:hover:not(:disabled) {
+    background: rgba(0, 243, 255, 0.2);
+    border-color: #00f3ff;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+    transform: translateX(5px);
+}
+
+/* ESTADOS DE RESPOSTA (CERTO / ERRADO) */
+.answer-btn.correct {
+    background: rgba(0, 230, 118, 0.35) !important;
+    border-color: #00e676 !important;
+    color: #fff !important;
+    box-shadow: 0 0 20px rgba(0, 230, 118, 0.6);
+}
+
+.answer-btn.incorrect {
+    background: rgba(255, 23, 68, 0.35) !important;
+    border-color: #ff1744 !important;
+    color: #fff !important;
+    box-shadow: 0 0 20px rgba(255, 23, 68, 0.6);
+}
+
+.answer-btn:disabled {
+    cursor: not-allowed;
+}
+
+.controls {
+    margin-top: 20px;
+    text-align: right;
+}
+
+/* EFEITOS DE OCULTAR */
+.hide {
+    display: none !important;
+}
+
+.screen {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.stats-box {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 0, 255, 0.3);
+}
